@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Para Victoria Alessandra</title>
+    <title>Para Victoria Alejandra: La Niñera que Inspira</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght?100;400;700&display=swap" rel="stylesheet">
     <style>
         /* ESTILOS BASE Y FONDO MÁGICO */
@@ -14,18 +14,19 @@
             align-items: center;
             min-height: 100vh;
             margin: 0;
-            background: linear-gradient(135deg, #ffb3b3, #ff7a91); 
+            /* Fondo vibrante y alegre */
+            background: linear-gradient(135deg, #f8bbd0, #e1bee7); /* Rosado y lila suaves */
             animation: background-pulse 15s infinite alternate; 
             font-family: 'Raleway', sans-serif;
-            color: #1a1a1a;
+            color: #333; 
             overflow: hidden; 
             position: relative;
         }
 
         @keyframes background-pulse {
-            0% { background: linear-gradient(135deg, #ffb3b3, #ff7a91); }
-            50% { background: linear-gradient(135deg, #ffccf0, #ff8c42); }
-            100% { background: linear-gradient(135deg, #ffb3b3, #ff7a91); }
+            0% { background: linear-gradient(135deg, #f8bbd0, #e1bee7); }
+            50% { background: linear-gradient(135deg, #c5cae9, #b2ebf2); }
+            100% { background: linear-gradient(135deg, #f8bbd0, #e1bee7); }
         }
 
         /* CONTENEDOR PRINCIPAL DE LA CARTA */
@@ -34,7 +35,7 @@
             padding: 60px; 
             background-color: rgba(255, 255, 255, 0.98); 
             border-radius: 20px;
-            box-shadow: 0 15px 40px rgba(255, 50, 100, 0.5); 
+            box-shadow: 0 15px 40px rgba(180, 100, 200, 0.3); /* Sombra más lila/azulada */
             position: relative;
             z-index: 10;
             opacity: 0; 
@@ -54,14 +55,14 @@
             font-size: 1.4rem;
             white-space: pre-wrap; 
             overflow: hidden;
-            border-right: 0.15em solid #333; 
+            border-right: 0.15em solid #a8a8a8; 
             animation: blink-caret 0.75s step-end infinite;
             line-height: 1.6; 
             min-height: 1.4rem; 
         }
         
         .line strong { 
-            color: #d1004a;
+            color: #880e4f; /* Color más profundo para el énfasis */
             font-family: 'Playfair Display', serif;
             font-weight: 700;
         }
@@ -70,8 +71,8 @@
             font-size: 2.5rem; 
             font-family: 'Playfair Display', serif;
             font-weight: 900;
-            color: #ff386a; 
-            text-shadow: 0 0 15px rgba(255, 50, 100, 0.9), 0 0 30px rgba(255, 50, 100, 0.6);
+            color: #c2185b; /* Tono de rosa fuerte para el impacto */
+            text-shadow: 0 0 15px rgba(194, 24, 91, 0.7), 0 0 30px rgba(194, 24, 91, 0.4);
             margin-top: 40px;
             border-right: none !important; 
             animation: final-line-pulse 1s infinite alternate; 
@@ -88,12 +89,12 @@
 
         @keyframes blink-caret {
             from, to { border-color: transparent }
-            50% { border-color: #333; }
+            50% { border-color: #a8a8a8; }
         }
 
-        /* ESTILO DEL BOTÓN DE DEDICATORIA (Elegante y Minimalista) */
+        /* ESTILO DEL BOTÓN DE DEDICATORIA */
         #dedication-button {
-            display: none; /* Inicia oculto */
+            display: none; 
             margin-top: 40px;
             padding: 15px 30px;
             font-size: 1.2rem;
@@ -101,18 +102,18 @@
             font-weight: 700;
             text-decoration: none;
             color: #fff;
-            background-color: #ff386a; /* Rojo Pasión */
-            border: 2px solid #ff386a;
+            background-color: #4CAF50; 
+            border: 2px solid #FF5722; 
             border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(255, 50, 100, 0.4);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
             transition: all 0.3s ease;
             cursor: pointer;
             z-index: 20;
         }
 
         #dedication-button:hover {
-            background-color: #d1004a;
-            box-shadow: 0 8px 20px rgba(255, 50, 100, 0.6);
+            background-color: #388E3C;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
             transform: scale(1.05);
         }
 
@@ -128,7 +129,7 @@
             transform: translateY(20px);
         }
 
-        /* --- PARTÍCULAS DE EXPLOSIÓN/LLUVIA (Se mantienen) --- */
+        /* --- PARTÍCULAS DE EXPLOSIÓN/LLUVIA --- */
         .particle-container {
             position: absolute;
             top: 0;
@@ -150,8 +151,8 @@
             .line { font-size: 1.1rem; margin-bottom: 20px; }
             .final-impact-line { font-size: 1.8rem; }
             #signature { font-size: 1.2rem; margin-top: 20px; }
-            .particle { font-size: 1.5rem; }
             #dedication-button { font-size: 1rem; padding: 10px 20px; }
+            .particle { font-size: 1.5rem; }
         }
     </style>
 </head>
@@ -160,9 +161,9 @@
     <div id="letter-container"></div>
     
     <a id="dedication-button" 
-       href="https://www.youtube.com/watch?v=tAGnKpE4NCI" 
+       href="https://www.youtube.com/watch?v=KlXe8tT-ivk" 
        target="_blank">
-       Te dedico esta 🎧
+       ¡Música para tus pequeños! 🇲🇽🧸
     </a>
     
     <div id="signature"></div>
@@ -171,20 +172,25 @@
     <script>
         // LÓGICA DE PROGRAMACIÓN CON JAVASCRIPT
 
-        // 1. EL CONTENIDO DE LA CARTA (Inspirada en "Nothing Else Matters")
+        // 1. EL CONTENIDO DE LA CARTA (Animadora y tierna)
         const letterContent = [
-            "Mi amada <strong>Victoria Alessandra</strong>, la única verdad en mi universo. 🌹", 
-            "",
-            "Eres el ancla que me sostiene. **Las palabras son vanas**, y las promesas de otros mundos **nada significan** cuando miro tu alma. ✨",
-            "Contigo, encontré el **camino que decido recorrer** en soledad, sin buscar la aprobación o el juicio del mundo. Solo tu corazón es mi guía. 🧭",
-            "Nuestro amor es una conexión tan **cruda, honesta y auténtica** que no tiene que ser entendida por nadie más. Es **nuestro pacto**. 💖",
-            "En tu mirada, sé que no hay nada que deba ocultar. No hay miedos, ni fronteras. No hay mayor **libertad** que la que encuentro a tu lado. 🌟",
-            "",
-            "<strong>¡Te Amo, porque para mí, Nada Más Importa que tenerte a mi lado!</strong> 💥",
-            "",
-            "Con la devoción inquebrantable de mi alma,",
-            "El Amor De Tu Vida"
-        ];
+        "Mi inspiradora <strong>Victoria Alejandra</strong>, la fuerza que nutre el futuro. 🚀", 
+        "",
+        // --- INICIO DEL PARCHE ---
+        "Mi amor, ya que casi te vas a trabajar, quiero que sepas que te amo,",
+        "y que estaré para ti **siempre**. Suerte en tu hermosa labor. ❤️",
+        "", // Espacio para separar
+        // --- FIN DEL PARCHE ---
+        "Tu labor como niñera es mucho más que un trabajo; es una **misión de amor y alegría**. Cada día, con tu sonrisa, siembras esperanza en pequeños corazones. ✨",
+        "La forma en que transformas los desafíos en **aventuras** y los pequeños momentos en **grandes recuerdos** es simplemente admirable. Eres una **heroína** de la cotidianidad. 🌟",
+        "Sé que a veces es agotador, pero quiero que sepas que tu **energía, paciencia y creatividad** dejan una huella imborrable. ¡Eres un **motor de luz**! 💖",
+        "Que nada apague esa chispa que te hace ser tú. Sigue brillando, sigue enseñando, sigue amando. **¡Tu impacto es inmenso y maravilloso!** 🌈",
+        "",
+        "<strong>¡Te Amo, mi valiente niña linda, y celebro cada paso que das con tu hermoso corazón!</strong> 😍",
+        "",
+        "Con la devoción inquebrantable de mi alma,",
+        "Tu admirador"
+    ];
         
         // Elementos del DOM
         const letterContainer = document.getElementById('letter-container');
@@ -197,9 +203,9 @@
         const pauseBetweenLines = 1800; 
         let currentLineIndex = 0;
 
-        // Emojis para la lluvia y explosiones
-        const rainEmojis = ['💖', '✨', '🌹', '❤️', '🌟', '🌷', '💫'];
-        const explosionEmojis = ['💥', '🔥', '💖', '✨', '🌟', '❤️', '🌹', '🎆']; 
+        // Emojis para la lluvia y explosiones (más alegres y motivadores)
+        const rainEmojis = ['💖', '✨', '🚀', '🌈', '🌟', '💪', '😊', '🎉'];
+        const explosionEmojis = ['💥', '💖', '🚀', '🌟', '🎉', '✨', '😊', '😍']; 
 
         // --- FUNCIONES DE ANIMACIÓN ---
 
@@ -209,7 +215,7 @@
                 const newLine = document.createElement('span');
                 newLine.classList.add('line');
                 
-                const finalLineText = "<strong>¡Te Amo, porque para mí, Nada Más Importa que tenerte a mi lado!</strong> 💥";
+                const finalLineText = "<strong>¡Te Amo, mi valiente niña linda, y celebro cada paso que das con tu hermoso corazón!</strong> 😍";
                 
                 if (lineText === finalLineText) {
                     newLine.classList.add('final-impact-line');
@@ -248,12 +254,12 @@
                 element.classList.add('completed');
                 element.classList.remove('line');
 
-                // Disparar eventos visuales en frases clave
+                // Disparar eventos visuales en frases clave (emojis de ánimo/inspiración)
                 if (currentLineIndex === 2) { 
-                    createFloatingEmojis(['✨', '💫', '🚫'], element);
+                    createFloatingEmojis(['✨', '🌱', '😊'], element);
                 }
                 if (currentLineIndex === 4) {
-                    createFloatingEmojis(['🔒', '💖', '✍️'], element);
+                    createFloatingEmojis(['💡', '💖', '💪'], element);
                 }
                 if (currentLineIndex === 7) { 
                     triggerBigExplosion(element); 
