@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Victoria Alessandra</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght?100;400;700&display=swap" rel="stylesheet">
+    <style>
+        /* ESTILOS BASE Y FONDO MÁGICO */
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #ffb3b3, #ff7a91); 
+            animation: background-pulse 15s infinite alternate; 
+            font-family: 'Raleway', sans-serif;
+            color: #1a1a1a;
+            overflow: hidden; 
+            position: relative;
+        }
+
+        @keyframes background-pulse {
+            0% { background: linear-gradient(135deg, #ffb3b3, #ff7a91); }
+            50% { background: linear-gradient(135deg, #ffccf0, #ff8c42); }
+            100% { background: linear-gradient(135deg, #ffb3b3, #ff7a91); }
+        }
+
+        /* CONTENEDOR PRINCIPAL DE LA CARTA */
+        #letter-container {
+            max-width: 750px;
+            padding: 60px; 
+            background-color: rgba(255, 255, 255, 0.98); 
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(255, 50, 100, 0.5); 
+            position: relative;
+            z-index: 10;
+            opacity: 0; 
+            transform: translateY(30px);
+            animation: fade-in-up 1.5s forwards;
+            animation-delay: 0.5s;
+        }
+
+        @keyframes fade-in-up {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ESTILO DE LÍNEA SEPARADA */
+        .line {
+            display: block;
+            margin-bottom: 30px; 
+            font-size: 1.4rem;
+            white-space: pre-wrap; 
+            overflow: hidden;
+            border-right: 0.15em solid #333; 
+            animation: blink-caret 0.75s step-end infinite;
+            line-height: 1.6; 
+            min-height: 1.4rem; 
+        }
+        
+        .line strong { 
+            color: #d1004a;
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+        }
+
+        .final-impact-line { 
+            font-size: 2.5rem; 
+            font-family: 'Playfair Display', serif;
+            font-weight: 900;
+            color: #ff386a; 
+            text-shadow: 0 0 15px rgba(255, 50, 100, 0.9), 0 0 30px rgba(255, 50, 100, 0.6);
+            margin-top: 40px;
+            border-right: none !important; 
+            animation: final-line-pulse 1s infinite alternate; 
+        }
+        
+        @keyframes final-line-pulse {
+            from { transform: scale(1.0); opacity: 1; }
+            to { transform: scale(1.02); opacity: 0.95; }
+        }
+        
+        .completed {
+            border-right: none !important;
+        }
+
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: #333; }
+        }
+
+        /* ESTILO DEL BOTÓN DE DEDICATORIA (Elegante y Minimalista) */
+        #dedication-button {
+            display: none; /* Inicia oculto */
+            margin-top: 40px;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            text-decoration: none;
+            color: #fff;
+            background-color: #ff386a; /* Rojo Pasión */
+            border: 2px solid #ff386a;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(255, 50, 100, 0.4);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            z-index: 20;
+        }
+
+        #dedication-button:hover {
+            background-color: #d1004a;
+            box-shadow: 0 8px 20px rgba(255, 50, 100, 0.6);
+            transform: scale(1.05);
+        }
+
+        /* ESTILO DE LA FIRMA */
+        #signature {
+            margin-top: 50px;
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 1.8rem;
+            text-align: right;
+            color: #0d0d0d;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        /* --- PARTÍCULAS DE EXPLOSIÓN/LLUVIA (Se mantienen) --- */
+        .particle-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 100;
+        }
+        .particle {
+            position: absolute;
+            opacity: 0;
+            font-size: 2rem; 
+        }
+
+        /* MEDIA QUERIES */
+        @media (max-width: 768px) {
+            #letter-container { max-width: 90%; padding: 30px; }
+            .line { font-size: 1.1rem; margin-bottom: 20px; }
+            .final-impact-line { font-size: 1.8rem; }
+            #signature { font-size: 1.2rem; margin-top: 20px; }
+            .particle { font-size: 1.5rem; }
+            #dedication-button { font-size: 1rem; padding: 10px 20px; }
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="letter-container"></div>
+    
+    <a id="dedication-button" 
+       href="https://www.youtube.com/watch?v=tAGnKpE4NCI" 
+       target="_blank">
+       Te dedico esta 🎧
+    </a>
+    
+    <div id="signature"></div>
+    <div class="particle-container" id="particle-container"></div>
+
+    <script>
+        // LÓGICA DE PROGRAMACIÓN CON JAVASCRIPT
+
+        // 1. EL CONTENIDO DE LA CARTA (Inspirada en "Nothing Else Matters")
+        const letterContent = [
+            "Mi amada <strong>Victoria Alessandra</strong>, la única verdad en mi universo. 🌹", 
+            "",
+            "Eres el ancla que me sostiene. **Las palabras son vanas**, y las promesas de otros mundos **nada significan** cuando miro tu alma. ✨",
+            "Contigo, encontré el **camino que decido recorrer** en soledad, sin buscar la aprobación o el juicio del mundo. Solo tu corazón es mi guía. 🧭",
+            "Nuestro amor es una conexión tan **cruda, honesta y auténtica** que no tiene que ser entendida por nadie más. Es **nuestro pacto**. 💖",
+            "En tu mirada, sé que no hay nada que deba ocultar. No hay miedos, ni fronteras. No hay mayor **libertad** que la que encuentro a tu lado. 🌟",
+            "",
+            "<strong>¡Te Amo, porque para mí, Nada Más Importa que tenerte a mi lado!</strong> 💥",
+            "",
+            "Con la devoción inquebrantable de mi alma,",
+            "El Amor De Tu Vida"
+        ];
+        
+        // Elementos del DOM
+        const letterContainer = document.getElementById('letter-container');
+        const signatureElement = document.getElementById('signature');
+        const particleContainer = document.getElementById('particle-container');
+        const dedicationButton = document.getElementById('dedication-button');
+
+        // Configuración de la animación
+        const typingSpeed = 60; 
+        const pauseBetweenLines = 1800; 
+        let currentLineIndex = 0;
+
+        // Emojis para la lluvia y explosiones
+        const rainEmojis = ['💖', '✨', '🌹', '❤️', '🌟', '🌷', '💫'];
+        const explosionEmojis = ['💥', '🔥', '💖', '✨', '🌟', '❤️', '🌹', '🎆']; 
+
+        // --- FUNCIONES DE ANIMACIÓN ---
+
+        function typeWriter() {
+            if (currentLineIndex < letterContent.length) {
+                const lineText = letterContent[currentLineIndex];
+                const newLine = document.createElement('span');
+                newLine.classList.add('line');
+                
+                const finalLineText = "<strong>¡Te Amo, porque para mí, Nada Más Importa que tenerte a mi lado!</strong> 💥";
+                
+                if (lineText === finalLineText) {
+                    newLine.classList.add('final-impact-line');
+                }
+                
+                letterContainer.appendChild(newLine);
+                typeLineCharacters(newLine, lineText, 0);
+            } else {
+                // Cuando termina la carta, muestra el botón y la firma
+                dedicationButton.style.display = 'block'; 
+                
+                signatureElement.textContent = letterContent[letterContent.length - 1]; 
+                const totalDuration = (currentLineIndex * pauseBetweenLines) + (currentLineIndex * 20 * typingSpeed);
+                signatureElement.style.animationDelay = `${totalDuration / 1000}s`;
+                signatureElement.style.opacity = 1; 
+                
+                startParticleRain(rainEmojis, 150, 5, 2000, 15000); 
+            }
+        }
+
+        function typeLineCharacters(element, text, charIndex) {
+            if (charIndex < text.length) {
+                const char = text.charAt(charIndex);
+                if (char === '<') { 
+                    const endIndex = text.indexOf('>', charIndex);
+                    if (endIndex !== -1) {
+                        const htmlTag = text.substring(charIndex, endIndex + 1);
+                        element.innerHTML += htmlTag;
+                        charIndex = endIndex; 
+                    }
+                } else {
+                    element.innerHTML += char;
+                }
+                setTimeout(() => typeLineCharacters(element, text, charIndex + 1), typingSpeed);
+            } else {
+                element.classList.add('completed');
+                element.classList.remove('line');
+
+                // Disparar eventos visuales en frases clave
+                if (currentLineIndex === 2) { 
+                    createFloatingEmojis(['✨', '💫', '🚫'], element);
+                }
+                if (currentLineIndex === 4) {
+                    createFloatingEmojis(['🔒', '💖', '✍️'], element);
+                }
+                if (currentLineIndex === 7) { 
+                    triggerBigExplosion(element); 
+                }
+
+                currentLineIndex++;
+                setTimeout(typeWriter, pauseBetweenLines);
+            }
+        }
+
+        // Crea emojis flotantes cerca del texto
+        function createFloatingEmojis(emojisArr, targetElement) {
+            const rect = targetElement.getBoundingClientRect();
+            emojisArr.forEach(emojiChar => {
+                const emoji = document.createElement('div');
+                emoji.classList.add('particle');
+                emoji.textContent = emojiChar;
+                emoji.style.left = `${rect.right + Math.random() * 30 - 15}px`; 
+                emoji.style.top = `${rect.top + rect.height / 2 + Math.random() * 30 - 15}px`; 
+                particleContainer.appendChild(emoji);
+
+                const floatDuration = Math.random() * 2 + 1.5;
+                const floatDistance = Math.random() * 50 + 50; 
+                const floatAngle = Math.random() * 2 * Math.PI; 
+
+                emoji.animate([
+                    { transform: `translate(0, 0)`, opacity: 1, fontSize: '1.5rem' },
+                    { transform: `translate(${Math.cos(floatAngle) * floatDistance}px, ${Math.sin(floatAngle) * floatDistance}px) scale(0.2)`, opacity: 0, fontSize: '2rem' }
+                ], {
+                    duration: floatDuration * 1000,
+                    easing: 'ease-out',
+                    fill: 'forwards'
+                });
+
+                setTimeout(() => emoji.remove(), floatDuration * 1000 + 100);
+            });
+        }
+
+        // --- Explosión principal, centrada en la línea de impacto ---
+        function triggerBigExplosion(element) {
+            const rect = element.getBoundingClientRect();
+            const centerX = rect.left + rect.width / 2;
+            const centerY = rect.top + rect.height / 2;
+
+            for (let i = 0; i < 80; i++) { 
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                particle.textContent = explosionEmojis[Math.floor(Math.random() * explosionEmojis.length)];
+                particle.style.left = `${centerX}px`;
+                particle.style.top = `${centerY}px`;
+                particleContainer.appendChild(particle);
+
+                const angle = Math.random() * Math.PI * 2;
+                const distance = Math.random() * 300 + 100;
+                const duration = Math.random() * 3 + 1.5;
+
+                particle.animate([
+                    { transform: `translate(0, 0) scale(1)`, opacity: 1 },
+                    { transform: `translate(${Math.cos(angle) * distance}px, ${Math.sin(angle) * distance}px) scale(0.1)`, opacity: 0 }
+                ], {
+                    duration: duration * 1000,
+                    easing: 'ease-out',
+                    fill: 'forwards'
+                });
+
+                setTimeout(() => particle.remove(), duration * 1000 + 100);
+            }
+        }
+
+        // Lluvia de partículas genérica (usada para la lluvia final)
+        function startParticleRain(emojisArr, count, minSize, minDelay, maxDelay) {
+            for (let i = 0; i < count; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                particle.textContent = emojisArr[Math.floor(Math.random() * emojisArr.length)];
+                
+                const size = Math.random() * 1.5 + minSize; 
+                particle.style.fontSize = `${size}rem`;
+                
+                const startX = Math.random() * window.innerWidth;
+                particle.style.left = `${startX}px`;
+                
+                const delay = Math.random() * (maxDelay - minDelay) + minDelay;
+
+                 particle.animate([
+                    { transform: `translateY(-50px) scale(0.8)`, opacity: 0.8 },
+                    { transform: `translateY(${window.innerHeight + 50}px) scale(1.2)`, opacity: 0 }
+                ], {
+                    duration: delay,
+                    easing: 'linear',
+                    fill: 'forwards'
+                });
+
+                particleContainer.appendChild(particle);
+                setTimeout(() => particle.remove(), delay + 1000); 
+            }
+        }
+
+        // --- INICIO ---
+        window.onload = () => {
+            typeWriter();
+            startParticleRain(['💖', '✨', '🌟', '🌷'], 30, 0.8, 8000, 20000); 
+        };
+    </script>
+</body>
+</html>
