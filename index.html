@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Para Victoria Alessandra: La Niñera que Inspira</title>
+    <title>Para Victoria Alejandra: Esperando Como una Roca</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght?100;400;700&display=swap" rel="stylesheet">
     <style>
         /* ESTILOS BASE Y FONDO MÁGICO */
@@ -14,8 +14,8 @@
             align-items: center;
             min-height: 100vh;
             margin: 0;
-            /* Fondo vibrante y alegre */
-            background: linear-gradient(135deg, #f8bbd0, #e1bee7); /* Rosado y lila suaves */
+            /* Fondo que evoca firmeza y amor (tonos tierra y rosa) */
+            background: linear-gradient(135deg, #fce4ec, #e0e0e0); 
             animation: background-pulse 15s infinite alternate; 
             font-family: 'Raleway', sans-serif;
             color: #333; 
@@ -24,9 +24,9 @@
         }
 
         @keyframes background-pulse {
-            0% { background: linear-gradient(135deg, #f8bbd0, #e1bee7); }
-            50% { background: linear-gradient(135deg, #c5cae9, #b2ebf2); }
-            100% { background: linear-gradient(135deg, #f8bbd0, #e1bee7); }
+            0% { background: linear-gradient(135deg, #fce4ec, #e0e0e0); }
+            50% { background: linear-gradient(135deg, #cfd8dc, #ffccf0); }
+            100% { background: linear-gradient(135deg, #fce4ec, #e0e0e0); }
         }
 
         /* CONTENEDOR PRINCIPAL DE LA CARTA */
@@ -35,7 +35,7 @@
             padding: 60px; 
             background-color: rgba(255, 255, 255, 0.98); 
             border-radius: 20px;
-            box-shadow: 0 15px 40px rgba(180, 100, 200, 0.3); /* Sombra más lila/azulada */
+            box-shadow: 0 15px 40px rgba(100, 100, 100, 0.2); /* Sombra firme */
             position: relative;
             z-index: 10;
             opacity: 0; 
@@ -62,7 +62,7 @@
         }
         
         .line strong { 
-            color: #880e4f; /* Color más profundo para el énfasis */
+            color: #795548; /* Tono marrón/roca */
             font-family: 'Playfair Display', serif;
             font-weight: 700;
         }
@@ -71,8 +71,8 @@
             font-size: 2.5rem; 
             font-family: 'Playfair Display', serif;
             font-weight: 900;
-            color: #c2185b; /* Tono de rosa fuerte para el impacto */
-            text-shadow: 0 0 15px rgba(194, 24, 91, 0.7), 0 0 30px rgba(194, 24, 91, 0.4);
+            color: #5d4037; /* Marrón oscuro para firmeza */
+            text-shadow: 0 0 15px rgba(121, 85, 72, 0.7), 0 0 30px rgba(121, 85, 72, 0.4);
             margin-top: 40px;
             border-right: none !important; 
             animation: final-line-pulse 1s infinite alternate; 
@@ -102,8 +102,8 @@
             font-weight: 700;
             text-decoration: none;
             color: #fff;
-            background-color: #4CAF50; 
-            border: 2px solid #FF5722; 
+            background-color: #795548; /* Marrón de la roca */
+            border: 2px solid #5d4037; 
             border-radius: 8px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
             transition: all 0.3s ease;
@@ -112,7 +112,7 @@
         }
 
         #dedication-button:hover {
-            background-color: #388E3C;
+            background-color: #5d4037;
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
             transform: scale(1.05);
         }
@@ -129,7 +129,7 @@
             transform: translateY(20px);
         }
 
-        /* --- PARTÍCULAS DE EXPLOSIÓN/LLUVIA --- */
+        /* --- PARTÍCULAS DE EXPLOSIÓN/LLUVIA (Corazones y Piedras) --- */
         .particle-container {
             position: absolute;
             top: 0;
@@ -144,16 +144,6 @@
             opacity: 0;
             font-size: 2rem; 
         }
-
-        /* MEDIA QUERIES */
-        @media (max-width: 768px) {
-            #letter-container { max-width: 90%; padding: 30px; }
-            .line { font-size: 1.1rem; margin-bottom: 20px; }
-            .final-impact-line { font-size: 1.8rem; }
-            #signature { font-size: 1.2rem; margin-top: 20px; }
-            #dedication-button { font-size: 1rem; padding: 10px 20px; }
-            .particle { font-size: 1.5rem; }
-        }
     </style>
 </head>
 <body>
@@ -161,9 +151,9 @@
     <div id="letter-container"></div>
     
     <a id="dedication-button" 
-       href="https://www.youtube.com/watch?v=KlXe8tT-ivk" 
+       href="https://www.youtube.com/watch?v=C6uqTWHzHvo" 
        target="_blank">
-       ¡Música para tus pequeños! 🇲🇽🧸
+       Te dedico esta 🗿
     </a>
     
     <div id="signature"></div>
@@ -172,25 +162,26 @@
     <script>
         // LÓGICA DE PROGRAMACIÓN CON JAVASCRIPT
 
-        // 1. EL CONTENIDO DE LA CARTA (Animadora y tierna)
-        const letterContent = [
-        "Mi inspiradora <strong>Victoria Alessandra</strong>, la fuerza que nutre el futuro. 🚀", 
-        "",
-        // --- INICIO DEL PARCHE ---
-        "Mi amor, ya que casi te vas a trabajar, quiero que sepas que te amo,",
-        "y que estaré para ti **siempre**. Suerte en tu hermosa labor. ❤️",
-        "", // Espacio para separar
-        // --- FIN DEL PARCHE ---
-        "Tu labor como niñera es mucho más que un trabajo; es una **misión de amor y alegría**. Cada día, con tu sonrisa, siembras esperanza en pequeños corazones. ✨",
-        "La forma en que transformas los desafíos en **aventuras** y los pequeños momentos en **grandes recuerdos** es simplemente admirable. Eres una **heroína** de la cotidianidad. 🌟",
-        "Sé que a veces es agotador, pero quiero que sepas que tu **energía, paciencia y creatividad** dejan una huella imborrable. ¡Eres un **motor de luz**! 💖",
-        "Que nada apague esa chispa que te hace ser tú. Sigue brillando, sigue enseñando, sigue amando. **¡Tu impacto es inmenso y maravilloso!** 🌈",
-        "",
-        "<strong>¡Te Amo, mi valiente niña linda, y celebro cada paso que das con tu hermoso corazón!</strong> 😍",
-        "",
-        "Con la devoción inquebrantable de mi alma,",
-        "Tu admirador"
-    ];
+        // 1. EL CONTENIDO DE LA CARTA (Tema: Estabilidad y Espera)
+        // LÓGICA DE PROGRAMACIÓN CON JAVASCRIPT
+
+// 1. EL CONTENIDO DE LA CARTA (Corregido y formateado como documento)
+const letterContent = [
+    "Mi firme <strong>Victoria Alejandra</strong>, la roca de mi corazón. 🗿", 
+    "",
+    "Mi amor, ya que casi te vas a trabajar, quiero que sepas que te amo,",
+    "y que estaré para ti **siempre**. Suerte en tu noble labor. ❤️",
+    "",
+    "Tu existencia es el **cimiento inamovible** de mi vida. Eres la **paciencia** y la **fuerza** que el mundo necesita. 💪",
+    "No importa qué tan lejos tengas que ir o cuántas horas duren tus pasos; aquí, en casa, **te esperaré como una piedra** (*Like a Stone*), paciente y firme. 🏡",
+    "Este amor es nuestra verdad: una conexión que no se doblega ante la distancia o el cansancio. Un pacto **silencioso y eterno**. 💖",
+    "",
+    "<strong>¡Te amo, porque tú eres la razón por la que mi alma sabe dónde anclarse!</strong> ⚓",
+    "",
+    "Con la devoción inquebrantable de mi alma,",
+    "Tu admirador"
+];
+// ... (El resto del código JavaScript se mantiene igual) ...
         
         // Elementos del DOM
         const letterContainer = document.getElementById('letter-container');
@@ -203,11 +194,11 @@
         const pauseBetweenLines = 1800; 
         let currentLineIndex = 0;
 
-        // Emojis para la lluvia y explosiones (más alegres y motivadores)
-        const rainEmojis = ['💖', '✨', '🚀', '🌈', '🌟', '💪', '😊', '🎉'];
-        const explosionEmojis = ['💥', '💖', '🚀', '🌟', '🎉', '✨', '😊', '😍']; 
+        // Emojis para la lluvia y explosiones (Piedra, anclas, corazones)
+        const rainEmojis = ['💖', '✨', '🗿', '⚓', '💪', '🏡', '❤️'];
+        const explosionEmojis = ['💥', '💖', '🗿', '⚓', '💪', '❤️', '🔥']; 
 
-        // --- FUNCIONES DE ANIMACIÓN ---
+        // --- FUNCIONES DE ANIMACIÓN (Se mantienen las funciones de animación) ---
 
         function typeWriter() {
             if (currentLineIndex < letterContent.length) {
@@ -215,7 +206,7 @@
                 const newLine = document.createElement('span');
                 newLine.classList.add('line');
                 
-                const finalLineText = "<strong>¡Te Amo, mi valiente niña linda, y celebro cada paso que das con tu hermoso corazón!</strong> 😍";
+                const finalLineText = "<strong>¡Te Amo, porque tú eres la razón por la que mi alma sabe dónde anclarse!</strong> ⚓";
                 
                 if (lineText === finalLineText) {
                     newLine.classList.add('final-impact-line');
@@ -224,7 +215,6 @@
                 letterContainer.appendChild(newLine);
                 typeLineCharacters(newLine, lineText, 0);
             } else {
-                // Cuando termina la carta, muestra el botón y la firma
                 dedicationButton.style.display = 'block'; 
                 
                 signatureElement.textContent = letterContent[letterContent.length - 1]; 
@@ -254,14 +244,14 @@
                 element.classList.add('completed');
                 element.classList.remove('line');
 
-                // Disparar eventos visuales en frases clave (emojis de ánimo/inspiración)
-                if (currentLineIndex === 2) { 
-                    createFloatingEmojis(['✨', '🌱', '😊'], element);
+                // Disparar eventos visuales en frases clave
+                if (currentLineIndex === 4) { // Cimiento/Fuerza
+                    createFloatingEmojis(['🗿', '💪', '✨'], element);
                 }
-                if (currentLineIndex === 4) {
-                    createFloatingEmojis(['💡', '💖', '💪'], element);
+                if (currentLineIndex === 5) { // Esperaré/Hogar
+                    createFloatingEmojis(['🏡', '⌛', '🗿'], element);
                 }
-                if (currentLineIndex === 7) { 
+                if (currentLineIndex === 8) { // Explosión final
                     triggerBigExplosion(element); 
                 }
 
@@ -366,4 +356,3 @@
     </script>
 </body>
 </html>
-
